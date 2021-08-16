@@ -1,0 +1,28 @@
+<!-- extends表明此页面继承自 base.html 文件 -->
+{% extends "base.html" %}
+{% load static %}
+
+<!-- 写入 base.html 中定义的 title -->
+{% block title %}
+    上传文件
+{% endblock title %}
+
+<!-- 写入 base.html 中定义的 content -->
+{% block content %}
+<div class="container">
+
+	<div class="card">
+		<div class="card-header">
+		请选择您要上传的数据
+		</div>
+		<div class="card-body">
+			<form id="form" enctype="multipart/form-data" action="" method="post">
+				{% csrf_token %}
+				<p><input type="file" name="upload_file" class="" accept=""></p>
+				<input type="submit" name="提交" class="btn btn-info">
+			</form>
+<!--			<a href="#" class="btn btn-primary">Go somewhere</a>-->
+		</div>
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+	选择试题
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+	<div class="card">
+		<div class="card-header">
+	        七年级英语试题
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">七年级英语试题</h5>
+			<p class="card-text">本选项用于上传七年级英语试题</p>
+			<a href="{% url 'info_manager:upload_index_7' %}" class="btn btn-primary">开始上传题目</a>
+			{% if user.id == 1 %}
+				<a href="{% url 'info_manager:export_7' %}" class="btn btn-info">下载七年级数据</a>
+			{% endif %}
+		</div>
+	</div>
+	<br/>
+	<div class="card">
+		<div class="card-header">
+			八年级英语试题
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">八年级英语试题</h5>
+			<p class="card-text">本选项用于上传八年级英语试题</p>
+			<a href="{% url 'info_manager:upload_index_8' %}" class="btn btn-primary">开始上传题目</a>
+			{% if user.id == 1 %}
+				<a href="{% url 'info_manager:export_8' %}" class="btn btn-info">下载八年级数据</a>
+			{% endif %}
+		</div>
+	</div>
+	<br/>
+	<div class="card">
+		<div class="card-header">
+			九年级英语试题
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">九年级英语试题</h5>
+			<p class="card-text">本选项用于上传九年级英语试题</p>
+			<a href="{% url 'info_manager:upload_index_9' %}" class="btn btn-primary">开始上传题目</a>
+			{% if user.id == 1 %}
+				<a href="{% url 'info_manager:export_9' %}" class="btn btn-info">下载九年级数据</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock content %}

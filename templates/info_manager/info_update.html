@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} 修改试题 {% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <br>
+            <form method="post" action=".">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">试题标题</label>
+                    <!-- 在 value 属性中指定文本框的初始值为旧的内容，即 article 对象中的 title 字段 -->
+                    <input type="text" class="form-control" id="title" name="title" value="{{ info.title }}">
+                </div>
+                <div class="form-group">
+                    <label for="question">试题题目</label>
+                    <input type="text" class="form-control" id="question" name="question" value="{{ info.question }}">
+                </div>
+                <div class="container">
+					<div class="row">
+						<div class="col-sm">
+							<p>A</p><input type="text" class="form-control" id="option_a" name="option_a" value="{{ info.option_a }}">
+						</div>
+						<div class="col-sm">
+							<p>B</p><input type="text" class="form-control" id="option_b" name="option_b" value="{{ info.option_b }}">
+						</div>
+						<div class="col-sm">
+							<p>C</p><input type="text" class="form-control" id="option_c" name="option_c" value="{{ info.option_c }}">
+						</div>
+						<div class="col-sm">
+							<p>D</p><input type="text" class="form-control" id="option_d" name="option_d" value="{{ info.option_c }}">
+						</div>
+					</div>
+                </div>
+	            <br/>
+	            <div class="form-group">
+		            <label for="question_id">试题ID</label>
+                    <!-- 在 value 属性中指定文本框的初始值为旧的内容，即 article 对象中的 title 字段 -->
+                    <input type="text" class="form-control" id="question_id" name="question_id" value="{{ info.question_id }}">
+	            </div>
+	            <div class="form-group">
+		            <label for="answer">试题答案</label>
+		            <input type="text" class="form-control" id="answer" name="answer" value="{{ info.answer }}">
+	            </div>
+	            <div class="form-group">
+					<label for="question_info">试题信息</label>
+                    <input type="text" class="form-control" id="question_info" name="question_info" value="{{ info.question_info }}">
+	            </div>
+				<br />
+                <button type="submit" class="btn btn-primary">完成</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>BEAR SCHOOL TEST INFO UPLOADER</title>
+</head>
+<body>
+<!-- 定义导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container">
+
+		<!-- 导航栏商标 -->
+		<a class="navbar-brand" href="{% url 'info_manager:info_index' %}">蓓尔思库培训学校-数据管理系统</a>
+
+		<!-- 导航入口 -->
+		<div>
+			<ul class="navbar-nav">
+				<!-- 条目 -->
+				<li class="dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="listDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据列表</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="{% url 'info_manager:info_list_7' %}">七年级试题</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{% url 'info_manager:info_list_8' %}">八年级试题</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="{% url 'info_manager:info_list_9' %}">九年级试题</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'info_manager:info_index' %}">上传数据</a>
+				</li>
+				{% if user.id == 1 %}
+				<li class="nav-item">
+					<a class="nav-link" href="#">下载数据</a>
+				</li>
+				{% endif %}
+				{% if user.is_authenticated %}
+					<!-- 如果用户已经登录，则显示用户名下拉框 -->
+			        <li class="dropdown">
+			            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			              {{ user.username }}
+			            </a>
+			            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			              <a class="dropdown-item" href="{% url 'userprofile:logout' %}">退出登录</a>
+			            </div>
+			        </li>
+				{% else %}
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'userprofile:login' %}">用户登录</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav>
+<div>
+
+</div>
+
+</body>
+</html>
