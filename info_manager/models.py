@@ -19,14 +19,14 @@ class InfoPost_7(models.Model):
     option_b = models.CharField(max_length=100)
     option_c = models.CharField(max_length=100)
     option_d = models.CharField(max_length=100)
-    answer = models.CharField(max_length=2)
+    answer = models.IntegerField()
 
     # 试题的其他信息
     question_id = models.CharField(max_length=10)
     question_info = models.CharField(max_length=200)
 
     # 创建时间,设置默认创建时间为当前时间
-    created = models.DateTimeField(default=timezone.now())
+    created = models.DateTimeField(default=timezone.now)
 
     # 创建内部类,用作于指定其他信息
     class Meta:
@@ -47,7 +47,7 @@ class InfoPost_8(models.Model):
     option_b = models.CharField(max_length=100)
     option_c = models.CharField(max_length=100)
     option_d = models.CharField(max_length=100)
-    answer = models.CharField(max_length=2)
+    answer = models.IntegerField()
 
     # 试题的其他信息
     question_id = models.CharField(max_length=10)
@@ -75,14 +75,14 @@ class InfoPost_9(models.Model):
     option_b = models.CharField(max_length=100)
     option_c = models.CharField(max_length=100)
     option_d = models.CharField(max_length=100)
-    answer = models.IntegerField(max_length=1)
+    answer = models.IntegerField()
 
     # 试题的其他信息
     question_id = models.CharField(max_length=10)
     question_info = models.CharField(max_length=200)
 
     # 创建时间,设置默认创建时间为当前时间
-    created = models.DateTimeField(default=timezone.now())
+    created = models.DateTimeField(default=timezone.now)
 
     # 创建内部类,用作于指定其他信息
     class Meta:

@@ -10,7 +10,7 @@
 {% block content %}
 	<div class="container">
 		<nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">七年级英语试题</a>
+            <a class="navbar-brand" id="data_list">数据列表</a>
             <form class="form-inline">
 	            <label class="sr-only">content</label>
                 <input class="form-control mr-sm-2" type="text" name="search" placeholder="检索试题..." required>
@@ -43,7 +43,7 @@
 					</tr>
 				</tbody>
 			</table>
-				<p align="right"><a class="btn btn-danger btn-block" href="{% url 'info_manager:info_update_7' qes.id%}" role="button">修改试题</a></p>
+				<p align="right"><a class="btn btn-danger btn-block" href="{% url 'info_manager:info_update' grade=index id=qes.id %}" role="button">修改试题</a></p>
 			</div>
 		</div>
 		<br/>
@@ -89,5 +89,18 @@
 		    </div>
 		</div>
 	</div>
-
+<script>
+	function write_title(index){
+    if (index===0){
+        document.getElementById("data_list").innerHTML = "七年级英语试题";
+    }
+    else if(index===1){
+        document.getElementById("data_list").innerHTML = "八年级英语试题";
+    }
+    else{
+        document.getElementById("data_list").innerHTML = "九年级英语试题";
+    }
+}
+write_title({{index}})
+</script>
 {% endblock content %}

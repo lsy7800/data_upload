@@ -19,11 +19,11 @@
 				<li class="dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="listDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">数据列表</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="{% url 'info_manager:info_list_7' %}">七年级试题</a>
+						<a class="dropdown-item" href="{% url 'info_manager:info_list' index=0 %}">七年级试题</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{% url 'info_manager:info_list_8' %}">八年级试题</a>
+						<a class="dropdown-item" href="{% url 'info_manager:info_list' index=1 %}">八年级试题</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="{% url 'info_manager:info_list_9' %}">九年级试题</a>
+						<a class="dropdown-item" href="{% url 'info_manager:info_list' index=2 %}">九年级试题</a>
 					</div>
 				</li>
 				<li class="nav-item">
